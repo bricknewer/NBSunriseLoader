@@ -7,8 +7,10 @@
 //
 
 #import "NBViewController.h"
+#import "NBSunriseLoaderView.h"
 
 @interface NBViewController ()
+@property (strong, nonatomic) NBSunriseLoaderView *sunriseLoaderView;
 
 @end
 
@@ -18,6 +20,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.sunriseLoaderView = [[NBSunriseLoaderView alloc] initWithFrame:CGRectMake(60, 200, 200, 200)];
+    [self.view addSubview:self.sunriseLoaderView];
+    self.sunriseLoaderView.currentValue = 1;
+    [self.sunriseLoaderView drawRect:self.sunriseLoaderView.frame];
 }
 
 - (void)didReceiveMemoryWarning

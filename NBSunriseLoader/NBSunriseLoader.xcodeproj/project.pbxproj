@@ -22,6 +22,7 @@
 		A4C4F64F19A00EB90052E472 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C4F62E19A00EB90052E472 /* UIKit.framework */; };
 		A4C4F65719A00EB90052E472 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4C4F65519A00EB90052E472 /* InfoPlist.strings */; };
 		A4C4F65919A00EB90052E472 /* NBSunriseLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C4F65819A00EB90052E472 /* NBSunriseLoaderTests.m */; };
+		A4C4F66419A00F060052E472 /* NBSunriseLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C4F66319A00F060052E472 /* NBSunriseLoaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		A4C4F65419A00EB90052E472 /* NBSunriseLoaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NBSunriseLoaderTests-Info.plist"; sourceTree = "<group>"; };
 		A4C4F65619A00EB90052E472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A4C4F65819A00EB90052E472 /* NBSunriseLoaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBSunriseLoaderTests.m; sourceTree = "<group>"; };
+		A4C4F66219A00F060052E472 /* NBSunriseLoaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBSunriseLoaderView.h; sourceTree = "<group>"; };
+		A4C4F66319A00F060052E472 /* NBSunriseLoaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBSunriseLoaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				A4C4F64319A00EB90052E472 /* NBViewController.m */,
 				A4C4F64519A00EB90052E472 /* Images.xcassets */,
 				A4C4F63119A00EB90052E472 /* Supporting Files */,
+				A4C4F66219A00F060052E472 /* NBSunriseLoaderView.h */,
+				A4C4F66319A00F060052E472 /* NBSunriseLoaderView.m */,
 			);
 			path = NBSunriseLoader;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				A4C4F64419A00EB90052E472 /* NBViewController.m in Sources */,
 				A4C4F63B19A00EB90052E472 /* NBAppDelegate.m in Sources */,
 				A4C4F63719A00EB90052E472 /* main.m in Sources */,
+				A4C4F66419A00F060052E472 /* NBSunriseLoaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
