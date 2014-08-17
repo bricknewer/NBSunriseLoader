@@ -37,6 +37,9 @@
     for (UIView *view in self.barViews) {
         [self addSubview:view];
     }
+    self.whiteOverlayView = [[UIView alloc] init];
+    self.whiteOverlayView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:self.whiteOverlayView];
 }
 
 - (NSArray *)barViews
@@ -44,11 +47,20 @@
     if (!_barViews) {
         _barViews = [[NSArray alloc] init];
         NSMutableArray *barViews = [[NSMutableArray alloc] init];
-        for (int i = 0; i < 4; i++) {
-            UIView *barView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height + (2 * i * barHeight), self.frame.size.width, barHeight)];
+        BOOL on = YES;
+        for (int i = 0; i < 8; i++) {
+            UIView *barView = [[UIView alloc] init];
+            if (on) {
+                barView.frame = CGRectMake(0, self.frame.size.height + (2 * i * barHeight) + barHeight * 0.05, self.frame.size.width, barHeight * 0.9);
+            } else {
+                barView.frame = CGRectMake(0, self.frame.size.height + (2 * i * barHeight), self.frame.size.width, barHeight);
+            }
             
             barView.backgroundColor = [UIColor whiteColor];
-            [barViews addObject:barView];
+            if (on) {
+                [barViews addObject:barView];
+            }
+            on = !on;
         }
         _barViews = barViews;
     }
@@ -57,6 +69,9 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    self.whiteOverlayView.alpha = 1 - self.currentValue;
+    self.whiteOverlayView.frame = self.bounds;
+    
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -89,10 +104,15 @@
     
     int i = 0;
     for (UIView *view in self.barViews) {
-        CGRect bounds = view.bounds;
-        bounds.origin.y = partialY + (2 * i * barHeight);
+        CGRect frame = view.frame;
+        frame.origin.y = partialY + (2 * i * barHeight);
+        view.frame = frame;
         i++;
     }
+    
+    //// Cleanup
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorSpace);
 }
 
 @end

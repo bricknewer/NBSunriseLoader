@@ -15,8 +15,39 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.88043478260869568" green="0.88043478260869568" blue="0.88043478260869568" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tO-3n-Fg1">
+                                <rect key="frame" x="85" y="209" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="L4K-KA-XxO"/>
+                                    <constraint firstAttribute="height" constant="150" id="hlv-KF-2E5"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DwI-jv-fkQ">
+                                <rect key="frame" x="20" y="528" width="280" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="dXM-Gf-543"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DwI-jv-fkQ" secondAttribute="trailing" constant="20" symbolic="YES" id="CxI-fU-20T"/>
+                            <constraint firstAttribute="centerX" secondItem="5tO-3n-Fg1" secondAttribute="centerX" id="Dde-Dt-BE7"/>
+                            <constraint firstItem="DwI-jv-fkQ" firstAttribute="centerX" secondItem="5tO-3n-Fg1" secondAttribute="centerX" id="Eju-3O-fss"/>
+                            <constraint firstAttribute="bottom" secondItem="DwI-jv-fkQ" secondAttribute="bottom" constant="20" symbolic="YES" id="Ke2-tk-AzL"/>
+                            <constraint firstAttribute="centerY" secondItem="5tO-3n-Fg1" secondAttribute="centerY" id="Nz9-e3-Iid"/>
+                            <constraint firstItem="DwI-jv-fkQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="kx1-3H-91b"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadingBarDistanceFromRightEdgeConstraint" destination="CxI-fU-20T" id="9be-xG-D1D"/>
+                        <outlet property="placeholderView" destination="5tO-3n-Fg1" id="nf4-RS-KdV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

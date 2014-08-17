@@ -11,5 +11,5 @@
 @interface NBSunriseLoaderView : UIView
 @property CGFloat currentValue;
 @property (strong, nonatomic) NSArray *barViews; // of views
-
+@property (strong, nonatomic) UIView *whiteOverlayView;
 @end
