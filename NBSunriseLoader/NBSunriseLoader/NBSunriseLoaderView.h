@@ -12,4 +12,6 @@
 @property (nonatomic) CGFloat currentValue;
 @property (strong, nonatomic) NSArray *barViews; // of views
 @property (strong, nonatomic) UIView *whiteOverlayView;
+@property (strong, nonatomic) UIColor *color1;
+@property (strong, nonatomic) UIColor *color2;
 @end

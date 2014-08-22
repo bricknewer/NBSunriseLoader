@@ -51,7 +51,7 @@
         for (int i = 0; i < 8; i++) {
             UIView *barView = [[UIView alloc] init];
             if (on) {
-                barView.frame = CGRectMake(0, self.frame.size.height + (2 * i * barHeight) + barHeight * 0.05, self.frame.size.width, barHeight * 0.9);
+                barView.frame = CGRectMake(0, self.frame.size.height + (40 * i + 1) * (barHeight * 0.05), self.frame.size.width, barHeight * 0.9);
             } else {
                 barView.frame = CGRectMake(0, self.frame.size.height + (2 * i * barHeight), self.frame.size.width, barHeight);
             }
@@ -96,12 +96,12 @@
     self.layer.cornerRadius = min/2;
     
     //// Color setup
-    UIColor *redColor = [UIColor redColor];
-    UIColor *orangeColor = [UIColor orangeColor];
+    UIColor *color1 = self.color1;
+    UIColor *color2 = self.color2;
     
     //// Gradient setup
     CGFloat gradientLocations[] = {0, 1};
-    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)orangeColor.CGColor, (id)redColor.CGColor], gradientLocations);
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)@[(id)color1.CGColor, (id)color2.CGColor], gradientLocations);
     
     //// Rectangle Drawing
     UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect:circleBounds];
@@ -112,10 +112,11 @@
     
     //// Bars placement
     CGFloat finalY = 3 * self.bounds.size.height / 5;
-    CGFloat partialY = (1 - self.currentValue) * (2 * self.bounds.size.height / 5) + finalY;
+    CGFloat partialY = (1 - (self.currentValue - 0.5) * 2) * (2 * self.bounds.size.height / 5) + finalY;
     
     int i = 0;
     for (UIView *view in self.barViews) {
+        view.alpha = 1;
         CGRect frame = view.frame;
         frame.origin.y = partialY + (2 * i * barHeight);
         view.frame = frame;
