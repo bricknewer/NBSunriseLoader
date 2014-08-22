@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NBSunriseLoaderView : UIView
-@property CGFloat currentValue;
+@property (nonatomic) CGFloat currentValue;
 @property (strong, nonatomic) NSArray *barViews; // of views
 @property (strong, nonatomic) UIView *whiteOverlayView;
 @end

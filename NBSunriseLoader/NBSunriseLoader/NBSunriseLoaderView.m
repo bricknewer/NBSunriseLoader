@@ -67,8 +67,20 @@
     return _barViews;
 }
 
+-(void)setCurrentValue:(CGFloat)currentValue
+{
+    if (currentValue > 1) {
+        currentValue = 1;
+    }
+    _currentValue = currentValue;
+    [self setNeedsDisplay];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+}
+
 - (void)drawRect:(CGRect)rect
 {
+    [super drawRect:rect];
     self.whiteOverlayView.alpha = 1 - self.currentValue;
     self.whiteOverlayView.frame = self.bounds;
     

@@ -38,7 +38,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="DwI-jv-fkQ" secondAttribute="trailing" constant="20" symbolic="YES" id="CxI-fU-20T"/>
                             <constraint firstAttribute="centerX" secondItem="5tO-3n-Fg1" secondAttribute="centerX" id="Dde-Dt-BE7"/>
-                            <constraint firstItem="DwI-jv-fkQ" firstAttribute="centerX" secondItem="5tO-3n-Fg1" secondAttribute="centerX" id="Eju-3O-fss"/>
                             <constraint firstAttribute="bottom" secondItem="DwI-jv-fkQ" secondAttribute="bottom" constant="20" symbolic="YES" id="Ke2-tk-AzL"/>
                             <constraint firstAttribute="centerY" secondItem="5tO-3n-Fg1" secondAttribute="centerY" id="Nz9-e3-Iid"/>
                             <constraint firstItem="DwI-jv-fkQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="kx1-3H-91b"/>
